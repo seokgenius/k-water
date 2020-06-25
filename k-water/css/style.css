@@ -1,0 +1,381 @@
+@charset 'utf-8';
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Titillium+Web:wght@300;400;600;700&display=swap');
+
+/*common*/
+html,body {width:100%; height:100%;}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, form, fieldset, button {margin:0; padding:0;}
+body, h1, h2, h3, h4, h5, h6, th, td, input, select, textarea {margin:0; padding:0; line-height:21px; font-size:15px; font-family:'Noto Sans KR','Titillium Web',sans-serif; color:#222;}
+ul, ol, dl, dt, dd {margin:0; padding:0; list-style:none;}
+img {border:none;}
+hr {display:none;}
+fieldset {border:none;}
+legend {display:none;}
+p {margin:0;}
+table {table-layout:fixed; border-collapse:collapse; border-spacing:0;}
+a {text-decoration: none; color: #222;}
+
+/*body*/
+body#main {/*overflow: hidden;*/ height: 100%;}
+body#main .layout {position: relative; max-width: 1440px; margin: 0 auto; box-sizing: border-box; z-index: 5;}
+body#main .layout:after {content: ''; display: block; clear: both;}
+
+/*skip-nav(본문바로가기)*/
+a#skip-nav {position: fixed; left: 0; top: -41px; width: 100%; line-height: 40px; text-align: center; font-size: 16px; color: #ffffff; background: rgba(0, 0, 0, 0.6); border-bottom: 1px solid #ffffff; z-index: 100000; transition: top 0.3s;}
+a#skip-nav:focus {top: 0;}
+
+
+/*header*/
+#header {position: fixed; left: 0; top: 0; z-index: 1000; width: 100%; height: auto; background: #fff; box-sizing: border-box; transition: all 0.4s ease;}
+#header h1.logo {position: absolute; left: 50%; top: auto; margin-left: -700px; z-index: 990; width: 87px; height: 70px;}
+#header h1.logo a {display: block; height: 100%; overflow: hidden; text-indent: -9999px;}
+#header h1.logo a:after {content: ''; display: block; width: 100%; height: 100%; position: absolute; left: 0; top: 0; background: url(../img/head_logo.png) no-repeat center 50%;}
+
+#header #gnb {position: relative; height: 70px; z-index: 50; /*overflow: hidden;*/ box-shadow: 0 3px 15px 0 rgba(0,0,0,0.08);}
+#header #gnb ul.menu {position: relative; max-width: 850px; height: 70px; z-index: 20; box-sizing: border-box; padding: 0; margin: 0 auto;}
+#header #gnb ul.menu li {float: left; position: relative; width: 20%; height: 100%; box-sizing: border-box;}
+#header #gnb ul.menu li a {display: block; height: 70px; box-sizing: border-box; font-size: 21px; line-height: 70px; text-align: center;}
+#header #gnb ul.menu li a span {display: inline-block; vertical-align: top; height: 100%; padding: 20px 0; box-sizing: border-box; line-height: 31px;}
+#header #gnb ul.menu li:hover a span {color: #3d66c4;}
+#header #gnb ul.menu li ul.menu-sub {display: none; position: relative; width: 100%; padding: 14px 30px 20px 30px; box-sizing: border-box; border-top: 1px solid transparent; transition: background 0.3s ease;}
+
+#header #gnb ul.menu li ul.menu-sub.on {height: 315px; display: block; opacity: 1; background: #ecf3fb; border-top-color: #b1c9e5;}
+#header #gnb ul.menu li ul.menu-sub li {width: auto; height: 35px; margin-bottom: 0; float: none;}
+#header #gnb ul.menu li ul.menu-sub li a {position: relative; font-size: 15px; line-height: 20px; text-align: left; padding: 6px 0; display: inline-block; vertical-align: top; color: #5a5a5a;}
+#header #gnb ul.menu li ul.menu-sub li a span {font-weight: 400; margin: 0; padding: 0; width: 100%; height: auto; font-size: 16px; line-height: 23px;}
+#header #gnb ul.menu:after {content: ''; display: block; clear: both;}
+#header #gnb:after {content: ''; display: block; width: 100%; height: 70px; background: #fff; position: absolute; left: 0; top: 0;}
+
+#header #tnb {position: absolute; right: 50%; top: 21px; margin-right: -700px; z-index: 71; height: 70px; line-height: 31px;}
+#header #tnb div.top-lang {float: left; position: relative; display: block; font-size: 13px; width: 21px; height: 30px; margin-left: 9px;}
+#header #tnb div.top-lang a {position: absolute; display: inline-block; right: 0; font-size: 16px; color: #989898;}
+#header #tnb div.top-lang:after {content: ''; position: absolute; display: block; width: 0px; height: 15px; top: 50%; margin-top: -7.5px; right: 50%; margin-right: -0.5px; background: #ebebeb; box-sizing: border-box;}
+
+#header #tnb a.search-btn-open {display: block; font-size: 13px; float: left; width: 21px; height: 33px; margin-left: 9px; position: relative; background: url(../img/main_search.png) no-repeat center 50%; text-indent: -9999px; transition: all 0.3s ease;}
+#header #tnb a.search-btn-open.click {background-image: url(../img/search_detail_close.png);}
+
+#header div.search {display: none; position: absolute; left: 0; top: 70px; width: 100%; height: 179px; box-sizing: border-box; padding: 53px 0; background: rgba(20,33,59,0.7); z-index: 997; opacity: 0; transition: all 0.5s;}
+#header div.search.on {display: block; opacity: 1;}
+#header div.search div.form {width: 100%; max-width: 750px; height: 50px; margin: 0 auto; position: relative; box-sizing: border-box; padding-right: 35px; border-bottom: 2px solid rgba(255, 255, 255, 0.7); vertical-align: middle;}
+#header div.search div.form input[type="text"] {display: block; width: 98%; height: 48px; border: 0; padding: 0 5px; line-height: 48px; background: none; color: rgba(255,255,255,0.7); font-size: 20px; font-weight: 300;}
+#header div.search div.form input[type="text"]::placeholder {color: rgba(255,255,255,0.7);}
+#header div.search div.form input[type="submit"] {display: block; width: 35px; height: 48px; position: absolute; right: 0; top: 0; border: 0; background: url(../img/search_detail_submit.png) no-repeat center 55%; overflow: hidden; text-indent: -9999px;}
+
+/*footer*/
+#footer {background: #141414; position: relative; z-index: 20; height: 163px; /*overflow: hidden;*/}
+#footer .layout {position: relative; max-width: 1300px; margin: 0 auto; box-sizing: border-box; padding: 33px 0 33px;}
+#footer ul.menu-link {height: auto; padding-bottom: 23px; box-sizing: border-box;}
+#footer ul.menu-link li {float: left; position: relative; margin: 0 0 0 25px; padding: 0 0 0 15px;}
+#footer ul.menu-link li:after {content: ''; display: block; width: 2px; height: 2px; border-radius: 50%; background: #fff; position: absolute; left: -3px; top: 50%; margin-top: -1px;}
+#footer ul.menu-link li:first-child:after {display: none;}
+#footer ul.menu-link li:first-child {padding: 0; margin: 0;}
+#footer ul.menu-link li a {display: block; color: #fff; padding: 5px 0; font-size: 14px; line-height: 19px; font-weight: 300;}
+#footer ul.menu-link li a:hover {text-decoration: underline;}
+#footer ul.menu-link li:first-child a {color: #ffa975;}
+
+#footer ul.sns-link {position: absolute; right: 510px; top: 27px; z-index: 10;}
+#footer ul.sns-link:after {content: ''; display: block; clear: both;}
+#footer ul.sns-link li {float: left; margin-left: 7px;}
+#footer ul.sns-link li:first-child {margin-left: 0;}
+#footer ul.sns-link li a {display: block; width: 35px; background-size: 100% auto; height: 35px; box-sizing: border-box; border-radius: 50%; overflow: hidden; text-indent: -9999px; text-align: center; opacity: 0.8; transition: all 0.3s ease;}
+#footer ul.sns-link li.yt a {background: url(../img/main_ft_snsyt.png) no-repeat center center;}
+#footer ul.sns-link li.fb a {background: url(../img/main_ft_snsfa.png) no-repeat center center;}
+#footer ul.sns-link li.in a {background: url(../img/main_ft_snsin.png) no-repeat center center;}
+#footer ul.sns-link li.bl a {background: url(../img/main_ft_snsbl.png) no-repeat center center;}
+#footer ul.sns-link li.na a {background: url(../img/main_ft_snsna.png) no-repeat center center;}
+#footer ul.sns-link li.tw a {background: url(../img/main_ft_snstw.png) no-repeat center center;}
+#footer ul.sns-link li.kt a {background: url(../img/main_ft_snskt.png) no-repeat center center;}
+
+#footer div.site {position: absolute; right: 0; top: 25px; z-index: 20; width: 237px;}
+#footer div.site.relate-site {right: 250px;}
+#footer div.site a {display: block; width: 237px; padding: 0 7%; box-sizing: border-box; font-size: 13px; height: 38px; position: relative; border: 1px solid #7b7b7b; line-height: 36px; color: rgba(164,164,164,0.6);}
+#footer div.site a em.hidden {overflow: hidden; position: absolute; line-height: 1px; font-size: 1px; text-indent: -9999px;}
+#footer div.site > a:after {content: ''; display: block; position: absolute; right: 7%; top: 50%; margin-top: -5px; width: 18px; height: 11px; background: url(../img/relate_site_arrow.png) no-repeat center 50%;}
+#footer div.site ul {display: none; margin: 0; border: 1px solid #6e6e6e; border-bottom: 0; box-sizing: border-box; position: absolute; left: 0; bottom: 37px; background: #6e6e6e; width: 237px; z-index: 200; max-height: 210px; overflow: auto; transition: all 0.3s ease;}
+#footer div.site ul.open {display: block;}
+#footer div.site ul li {display: block; margin: 0; border-bottom: 1px solid #d9d9d9; float: none; width: auto;}
+#footer div.site ul li a {display: block; width: auto; border: 0; padding: 9px 7%; box-sizing: border-box; height: auto; color: rgba(255,255,255,0.7); font-size: 13px; line-height: 19px; font-weight: 300;}
+
+#footer div.info {padding-top: 21.5px; border-top: 1px solid rgba(255,255,255,0.22); box-sizing: border-box; color: #7b7b7b; font-size: 13px; line-height: 21px;}
+#footer div.info span {display: inline-block; margin-left: 30px;}
+#footer div.info span:first-child {margin-left: 0;}
+
+#footer div.cert-mark {position: absolute; right: 0; bottom: 24px;}
+#footer div.cert-mark img {margin-left: 10px;}
+#footer div.cert-mark img:first-child {margin-left: 0; opacity: 0.7;}
+
+/*content*/
+#content {}
+#content div.scroll {position: fixed; bottom: 64px; left: 50%; z-index: 1000; width: 26px; height: 43px; margin-left: -13px;}
+#content div.scroll:before {content: 'SCROLL'; position: absolute; display: block; width: 55px; text-align: center; left: 50%; top: -30px; margin-left: -27.5px; color: #fff; font-family: 'Titillium Web'; font-size: 16px; letter-spacing: -0.32px;}
+#content div.scroll:after {content: ''; position: absolute; display: block; width: 1px; height: 80px; background: #fff; left: 50%; margin-left: -0.5px; top: -120px;}
+#content div.scroll a {position: relative; display: block; width: 100%; height: 100%; border: 3px solid #fff; box-sizing: border-box; border-radius: 13px; color: #fff; text-indent: -9999px;}
+#content div.scroll a:after {content: ''; position: absolute; display: block; width: 4px; height: 4px; border-radius: 50%; background: #fff; top: 9px; left: 50%; margin-left: -2px; animation: mousescroll 1.8s infinite;}
+
+/*section 공통*/
+#content section {position: relative; width: 100%; height: 100vh; display: table; table-layout: fixed; box-sizing: border-box; overflow: hidden;}
+section .layout {width: 100%; margin: 0 auto; max-width: 1440px; padding: 0 25px;}
+section h3:before {content: ''; position: absolute; display: block; width: 43px; height: 34px; left: 50%; top: -45px; margin-left: -21.5px; background: url(../img/main_h3_title.png) no-repeat center center/contain;}
+section.service h3:before, section.management h3:before, section.recruit h3:before
+{background: url(../img/main_h3_title_fff.png) no-repeat center center;}
+section h3 {position: relative; margin: 0; text-align: center; font-size: 42px; line-height: 46px; margin-bottom: 16px; font-weight: 700; color: #222; letter-spacing: -0.6px;}
+section p.tit-p {text-align: center; color: #222; font-size: 19px; line-height: 28px;}
+
+/*content-메인*/
+.main {position: relative; background: rgba(15,47,112,0.9);}
+.main .slider {position: absolute; width: 100%; height: 100%; left: 0; top: 0; overflow: hidden;}
+.main .slider .control {position: absolute; width: 100%; height: auto; z-index: 100; left: 0; top: 50%; box-sizing: border-box; text-align: left;}
+.main .slider .control ul {overflow: hidden; display: block; position: absolute; left: 0; bottom: 50%; margin-bottom: -104px; margin-left: 3%; z-index: 9; width: 66px; text-align: left;}
+.main .slider .control ul li {display: inline-block;}
+.main .slider .control ul li:first-child {margin-top: 0px;}
+.main .slider .control ul li a {overflow: hidden; display: block; width: 66px; height: 66px; border-radius: 50%; line-height: 64px; text-align: center; color: rgba(255,255,255,0.5); transition: all 0.3s ease; border: 1px solid transparent; box-sizing: border-box;}
+.main .slider .control ul li a.on {color: #fff; border: 1px solid #fff; box-sizing: border-box;}
+.main .slider .control a[class*="btn_"] {text-align: center; display: inline-block; vertical-align: top; margin: 0 3px; width: 20px; height: 20px; position: relative; border: 0; right: auto; bottom: 0;}
+.main .slider .control a[class*="btn_"] span {line-height: 1px; font-size: 1px; position: absolute; left: -9999px; top: 0; overflow: hidden; text-indent: -9999px;}
+.main .slider .control a.btn-play {display: block; left: 18px; top: 50%; margin-left: 65px; width: 31px; height: 31px; margin-top: -140px; z-index: 10; text-indent: -999px; background-image: url(../img/btn_play.png); background-repeat: no-repeat; background-position: center center;}
+.main .slider .control a.btn-play.on {background-image: url(../img/btn_stop.png);}
+
+.main .slider .move {position: absolute; left: 0; top: 0; width: 100%; height: 100%; overflow: hidden; z-index: 5; transform: scale(1.3);}
+.main .slider .move.on {transform: scale(1); opacity: 1;}
+.main .slider .move ul {overflow: hidden; position: absolute; left: 0; top: 0; width: 100%; height: 100%;}
+.main .slider .move ul li {position: absolute; left: 0; top: 0; width: 100%; height: 100%;}
+.main .slider .move ul li:nth-child(1) > span.lazy {background-image: url(../img/main_visual01.jpg)}
+.main .slider .move ul li:nth-child(2) > span.lazy {background-image: url(../img/main_visual02.jpg)}
+.main .slider .move ul li:nth-child(3) > span.lazy {background-image: url(../img/main_visual03.jpg)}
+
+.main .slider .move ul li.on {z-index: 5;}
+.main .slider .move ul li.on span {transform: scale(1); opacity: 1;}
+.main .slider .move ul li > span {display: block; position: absolute; left: 0; top: 0; width: 100%; height: 100%; background-repeat: no-repeat; background-position: center top; background-size: cover; transform: scale(1.3); opacity: 1; transition: all 1.4s ease-out;}
+.main .slider .move ul li span.slogan {position: absolute; z-index: 50; height: auto; width: 100%; top: 50%; margin-top: -84px; transform: scale(1); transition: all 1s ease-out;}
+.main .slider .move ul li span.slogan span.title {display: block; font-size: 50px; line-height: 65px; color: #fff; text-align: center; letter-spacing: -2.5px; position: relative; font-family: 'Noto Sans KR';}
+.main .slider .move ul li span.slogan span.title:before {content: ''; display: block; position: absolute; background: url(../img/main_h2_title.png) no-repeat center center; width: 24px; height: 35px; top: -50px; left: 50%; margin-left: -12px;}
+.main .slider .move ul li span.slogan span.title span {display: block; margin-bottom: 12px; font-size: 30px; line-height: 46px; vertical-align: top; letter-spacing: -1.2px; font-family: "Titillium Web"; font-weight: 300;}
+
+/*content(K-water)*/
+.k-water {background: #f5fcff; padding-top: 165px; box-sizing: border-box;}
+.k-water:before, .k-water:after {content: ''; display: block; position: absolute; z-index: 1;}
+.k-water:before {width: 485px; height: 578px; background: url(../img/main_sec2_bg01.png) no-repeat left top; left: 0; top: 0;}
+.k-water:after {width:100%; height:161px; background:url(../img/main_sec2_bg02.png) no-repeat left top; left:0; bottom:0;-webkit-animation: main_sec2_bg02 10s infinite; animation: main_sec2_bg02 10s infinite;}
+@keyframes main_sec2_bg02{
+    0% {background-position: center center;}
+    25% {background-position: 70% center;}
+    50% {background-position: center center;}
+    75% {background-position: 70% center;}
+    100% {background-position: center center;}
+}
+@-webkit-keyframes main_sec2_bg02{
+    0% {background-position: center center;}
+    25% {background-position: 70% center;}
+    50% {background-position: center center;}
+    75% {background-position: 70% center;}
+    100% {background-position: center center;}
+}
+.k-water .layout h3:before {top: -40px;}
+.k-water .layout > ul {width: 100%; margin-top: 50px; z-index: 1;}
+.k-water .layout > ul > li {float: left; width: 32.5%; height: 475px; margin-left: 1.25%;}
+.k-water .layout > ul > li > a {overflow: hidden; display: block; position: relative; height: 226px; background: #fff; padding: 28px 0 0 38.5px; box-sizing: border-box; border-top-left-radius: 20px; border-bottom-right-radius: 20px; box-shadow: 2px 2px 15px rgba(63, 68, 138, 0.15);}
+.k-water .layout > ul > li > a:first-child {margin-bottom: 23px;}
+.k-water .layout > ul > li > a:hover p {text-decoration: underline;}
+.k-water .layout > ul > li > a h4 {position: relative; margin: 0 0 29px; box-sizing: border-box; font-size: 24px; line-height: 24px; color: #222; letter-spacing: -0.5px; font-weight: 700;}
+.k-water .layout > ul > li > a h4:after {content: ''; position: absolute; display: block; bottom: -16px; left: 0; width: 24px; height: 4px; background: #3d66c4;}
+.k-water .layout > ul > li > a p {position: relative; z-index: 1; font-size: 16px; color: #222;}
+.k-water .layout > ul > li > a .btn.arrow {position: absolute; padding: 0; bottom: 50px; margin: 0; border: 0; min-width: auto; width: 34px; height: 15px; background: url(../img/main_arrow_000.png) no-repeat center center; text-indent: -9999px; transition: all 0.3s ease;}
+.k-water .layout > ul > li > a.ceo p {color: #fff; font-weight: 300;}
+.k-water .layout > ul > li > a.ceo:hover .btn.arrow {}
+.k-water .layout > ul > li:first-child {margin-left: 0;}
+.k-water .layout > ul > li:first-child a {height: 186px;}
+.k-water .layout > ul > li:first-child > a:first-child {height: 266px; border-bottom-right-radius: 0;}
+.k-water .layout > ul > li:first-child > a.ceo {background: url(../img/main_menu_04.png) no-repeat right top/cover;}
+.k-water .layout > ul > li:first-child > a.ceo h4 {color: #fff;}
+.k-water .layout > ul > li:first-child > a.ceo h4:after {background: #fff;}
+.k-water .layout > ul > li > a.ceo .btn.arrow {background: url(../img/main_arrow_fff.png) no-repeat center center; bottom: 30px;}
+.k-water .layout > ul > li:first-child > a.safe {background: #97c4ff url(../img/main_menu05.png) no-repeat right top/contain; margin-bottom: 0;}
+.k-water .layout > ul > li:first-child > a.safe:before {content: ''; display: block; position: absolute; bottom: 0; right: 0; width: 282px; height: 165px; background: url(../img/main_menu_051.png) no-repeat right bottom; z-index: 0;}
+
+.k-water .layout > ul > li.popup-zone {position: relative; box-shadow: 2px 2px 15px rgba(63,68,138,0.15); border-top-left-radius: 20px; border-top-right-radius: 20px;}
+.k-water .layout > ul > li.popup-zone > div {width: 100%; height: 100%; margin-bottom: 0; padding: 0;}
+.k-water .layout > ul > li.popup-zone > div.control {position: relative; left: auto; right: 0; top: 419px; width: 100%; height: 56px; background: #18263b; padding: 14px 25px; line-height: 25px; box-sizing: border-box; text-align: right; z-index: 10;}
+.k-water .layout > ul > li.popup-zone > div.control strong {position: absolute; left: 25px; bottom: 0; font-size: 20px; line-height: 56px; font-weight: 400; color: #fff;}
+.k-water .layout > ul > li.popup-zone > div.control span.count {display: inline-block; letter-spacing: 1px; vertical-align: middle; margin-right: 20px; font-size: 17px; color: #fff;}
+.k-water .layout > ul > li.popup-zone > div.control span.count span:before {content: '/';}
+.k-water .layout > ul > li.popup-zone > div.control span.count span {position: relative; font-weight: 400;}
+.k-water .layout > ul > li.popup-zone > div.control a {vertical-align: middle;}
+.k-water .layout > ul > li.popup-zone > div.control a.btn-left {display: inline-block; width: 10px; height: 17px; background: url(../img/main_pop_leftarrow.png) no-repeat center center/contain; text-indent: 9999px; overflow: hidden;}
+.k-water .layout > ul > li.popup-zone > div.control a.btn-play, 
+.k-water .layout > ul > li.popup-zone > div.control a.btn-stop {width: 9px; height: 14px; margin: 0 15px; text-indent: 9999px; background: no-repeat center center/contain; overflow: hidden;}
+.k-water .layout > ul > li.popup-zone > div.control a.btn-play {display: inline-block; background-image: url(../img/btn_play.png);}
+.k-water .layout > ul > li.popup-zone > div.control a.btn-stop {display: none; background-image: url(../img/main_pop_stop.png);}
+.k-water .layout > ul > li.popup-zone > div.control a.btn-right {display: inline-block; width: 10px; height: 17px; text-indent: 9999px; background: url(../img/main_pop_rightarrow.png) no-repeat center center/contain;}
+
+
+.k-water .layout > ul > li.popup-zone > div.move {position: absolute; left: 0; top: 0; height: 100%; overflow: hidden; border-top-left-radius: 20px; border-top-right-radius: 20px;}
+.k-water .layout > ul > li.popup-zone > div.move ul {width: 100%; position: absolute; left: 0; top: 0; overflow: hidden; height: 100%;}
+.k-water .layout > ul > li.popup-zone > div.move ul li {float: none; position: absolute; left: 100%; top: 0; /*width: 100%; height: 100%;*/ padding: 0;}
+.k-water .layout > ul > li.popup-zone > div.move ul li:first-child {left: 0;}
+.k-water .layout > ul > li.popup-zone > div.move ul li a {overflow: hidden; display: block; position: relative; height: 100%; text-align: center; box-sizing: border-box; transition: all 0.3s ease;}
+.k-water .layout > ul > li.popup-zone > div.move ul li a img {display: block; margin: 0 auto; height: 100%;}
+
+.k-water .layout > ul > li:last-child > a.emp {background: url(../img/main_menu_01.png) no-repeat center bottom 30%/cover;}
+.k-water .layout > ul > li:last-child > a.sns-area {display: block; position: relative; padding: 28px 38.5px 0 38.5px; margin-bottom: 0; background: #9fc9ff url(../img/main_menu_02.png) no-repeat left bottom; background-size: 160px 174px;}
+.k-water .layout > ul > li:last-child > a.sns-area:before {content: ''; display: block; position: absolute; bottom: 0; right: 0; width: 224px; height: 226px; background: url(../img/main_menu_021.png) no-repeat right bottom;}
+.k-water .layout > ul > li:last-child > a.sns-area p.sns {position: relative; display: inline-block; margin-top: 15px; padding-top: 61px; box-sizing: border-box;}
+.k-water .layout > ul > li:last-child > a.sns-area p.sns span {display: inline-block; float: left; width: 51px; height: 51px; margin-left: 9px; background-repeat: no-repeat; background-size: contain; background-position: center center; text-indent: -9999px; border-radius: 50%;}
+.k-water .layout > ul > li:last-child > a.sns-area p.sns .yt {position: absolute; top: 0; left: 0; margin-left: 0; background-image: url(../img/main_menu_02yt.png);}
+.k-water .layout > ul > li:last-child > a.sns-area p.sns .fb {position: absolute; top: 0; left: 60px; margin-left: 0; background-image: url(../img/main_menu_02fb.png);}
+.k-water .layout > ul > li:last-child > a.sns-area p.sns .in {position: absolute; top: 0; left: 120px; margin-left: 0; background-image: url(../img/main_menu_02in.png);}
+.k-water .layout > ul > li:last-child > a.sns-area p.sns .bl {margin-left: 0; background-image: url(../img/main_menu_02bl.png);}
+.k-water .layout > ul > li:last-child > a.sns-area p.sns .na {background-image: url(../img/main_menu_02na.png);}
+.k-water .layout > ul > li:last-child > a.sns-area p.sns .tw {background-image: url(../img/main_menu_02tw.png);}
+.k-water .layout > ul > li:last-child > a.sns-area p.sns .kt {background-image: url(../img/main_menu_02kt.png);}
+
+
+/*content(service)*/
+.service {padding-top: 165px; box-sizing: border-box; position: relative; background: url(../img/main_section02_bg.png) no-repeat center center/cover;}
+.service:before {content: ''; display: block; position: absolute; width: 100%; height: 100%; top: 0; left: 0; background: rgba(0,74,117,0.7); z-index: 0;}
+.service h3 {color: #fff;}
+.service p.tit-p {color: #fff; font-weight: 300;}
+.service ul.top-ul {overflow: hidden; margin-top: 50px;}
+.service ul.top-ul:after {content: ''; display: block; clear: both;}
+.service ul.top-ul > li {overflow: hidden; position: relative; width: 23.875%; float: left; min-height: 415px; margin-left: 1.5%; padding: 31px 65px; border: 1px solid #fff; border-top: 3px solid #fff; box-sizing: border-box; text-align: center;}
+.service ul.top-ul > li:first-child {margin-left: 0;}
+.service ul.top-ul > li:after {content: ''; position: absolute; display: block; width: 100%; height: 1px; top: 93px; left: 0; background: rgba(255,255,255,0.3);}
+.service ul.top-ul > li > span {position: relative; color: #fff; font-size: 24px; line-height: 30px; font-weight: 500;}
+.service ul.top-ul > li ul {padding-top: 60px; width: 100%; text-align: left; box-sizing: border-box;}
+.service ul.top-ul > li ul li {position: relative; padding: 14px 0 14px 8px; font-size: 20px; line-height: 24px;}
+.service ul.top-ul > li ul li:before {content: ''; display: block; position: absolute; width: 6px; height: 2px; background: #fff; top: 25px; left: -5px;}
+.service ul.top-ul > li ul li a {color: #fff; font-weight: 300; line-height: 24px;}
+.service ul.bot-ul {overflow: hidden; margin-top: 21px; box-sizing: border-box;}
+.service ul.bot-ul:after {content: ''; display: block; clear: both;}
+.service ul.bot-ul li {position: relative; float: left; width: 49.25%; text-align: center; margin-right: 1.5%; border: 1px solid #fff; padding: 31px 0; box-sizing: border-box; background: rgba(255,255,255,0.15);}
+.service ul.bot-ul li:last-child {margin-right: 0;}
+.service ul.bot-ul li p {position: relative; width: 50%; float: left; font-size: 25px; color: #fff; box-sizing: border-box; font-weight: 400;}
+.service ul.bot-ul li:last-child p:last-child {font-size: 17px; font-weight: 300;}
+.service ul.bot-ul li p span {font-weight: 600;}
+.service ul.bot-ul li p:last-child:before {content: ''; position: absolute; display: block; width: 1px; height: 27px; background: #fff; top: 50%; margin-top: -13.5px; left: 0;}
+.service ul.bot-ul li p a {color: #fff;}
+
+/*content(news)*/
+.news {padding-top: 165px; box-sizing: border-box; position: relative; background: #f6f6f6 url(../img/main_section3_bg.png) no-repeat right bottom; overflow: hidden;}
+.slide {position: relative; width: 100%; height: 80px; padding: 10px 10px 10px 130px; box-sizing: border-box;}
+.slide .move {overflow: hidden; position: relative; z-index: 0; width: 100%; height: 100%;}
+.slide .move ul {overflow: hidden; position: absolute; left: 0; top: 0; width: 10000px; height: 100%;}
+.slide .move ul li {float: left; width: 170px; height: 100%; padding: 0px 5px;}
+.slide .move ul li:first-child {margin-left: 0;}
+.slide .title {display: block; position: absolute; left: 0; top: 12px; z-index: 1; width: 120px; font-size: 18px; text-align: center;}
+
+.news .layout .news-area {height: 198px; margin-top: 50px; padding: 0;}
+.news .layout .news-area .move {overflow: visible;}
+.news .layout .news-area ul {overflow: visible; width: 100%;}
+.news .layout .news-area ul li {float: left; width: 23%; margin-left: 2%; padding: 0; border-top-left-radius: 20px; box-sizing: border-box;}
+.news .layout .news-area ul li div {position: relative; width: 100%; height: 100%; padding: 20px 25px; background: #fff; border-top-left-radius: 20px; box-shadow: 5px 5px 20px rgba(221,221,221,0.57); box-sizing: border-box;}
+.news .layout .news-area ul li .title {position: relative; top: auto; margin: 0; line-height: 38px; font-size: 17px; color: #fff; text-indent: 20px; text-align: left; font-weight: 400; z-index: 1;}
+.news .layout .news-area ul li .title:before {content: ''; position: absolute; display: block; width: 110px; height: 100%; top: 0; left: -25px; z-index: -1; border-top-right-radius: 30px; border-bottom-right-radius: 30px;}
+.news .layout .news-area ul li.noti h4.title:before {background-color: #3d66c4;}
+.news .layout .news-area ul li a {background-color: transparent; border: 0; text-align: left;}
+.news .layout .news-area ul li .dates {box-sizing: border-box; font-size: 13px; color: rgba(102,102,102,0.65); font-weight: 400; padding-top: 0; position: absolute; bottom: 22px;}
+.news .layout .news-area ul li .txts {overflow: hidden; display: -webkit-box; width: 100%; height: 71px; padding-top: 20px; font-size: 19px; line-height: 26px; word-break: keep-all; -webkit-box-orient: vertical; -webkit-line-clamp: 2; text-overflow: ellipsis; color: #222; box-sizing: border-box; font-weight: 500;}
+.news .layout .news-area ul li .plus {position: absolute; bottom: 25px; right: 25px; display: block; width: 16px; height: 16px; background: url(../img/main_news_plus.png) no-repeat center center; text-indent: -9999px; transition: all 0.3s ease;}
+.news .layout .news-area ul li .plus:hover {transform: rotate(180deg);}
+.news .layout .news-area ul li.report h4.title:before {background-color: #fd9500;}
+
+.news .layout div.pop-ul > div {position: relative; float: left; height: 266px; width: 23%; margin-left: 2%; margin-top: 25px; box-sizing: border-box; box-shadow: 5px 5px 20px rgba(221,221,221,0.57); border-top-left-radius: 20px; border-top-right-radius: 20px; background: #fff;}
+.news .layout div.pop-ul > div.webzines {position: relative; padding: 20px 25px; background: #d1d9e2;}
+.news .layout div.pop-ul > div.webzines h4 {margin: 0; font-size: 25px; line-height: 27px; font-family: "Titillium Web"; font-weight: 600;}
+.news .layout div.pop-ul > div.webzines p.vol {position: relative; font-size: 12px; line-height: 18px;}
+.news .layout div.pop-ul > div.webzines p.vol:after {content: ''; position: absolute; display: block; width: 26px; height: 4px; background: #fff; bottom: -24px; left: 0;}
+.news .layout div.pop-ul > div.webzines p.txts {padding-top: 45px; width: 100%; font-size: 14px; box-sizing: border-box; word-break: keep-all;}
+.news .layout div.pop-ul > div.webzines img {position: absolute; top: 20px; right: 25px; width: 75px; height: 96px; display: block;}
+.news .layout div.pop-ul > div.webzines div.btn-box {position: absolute; left: 0; bottom: 26px; width: 100%; padding: 0 25px; box-sizing: border-box;}
+.news .layout div.pop-ul > div.webzines div.btn-box a.btn {display: inline-block; text-align: center; float: left; width: 50%; min-width: auto; height: auto; line-height: normal; padding: 6px 0; font-size: 12px; background-color: transparent; border: 1px solid #66718a; color: #66718a; box-sizing: border-box;}
+.news .layout div.pop-ul > div.webzines div.btn-box a.btn:first-child {border-right: 0;}
+.news .layout div.pop-ul > div.webzines div.btn-box a.btn:hover {background-color: #66718a; color: #fff;}
+.news .layout div.pop-ul div.popupzone {width: 100%; height: 100%; overflow: hidden; border-top-left-radius: 20px; border-top-right-radius: 20px;}
+.news .layout div.pop-ul > div > div > .control {position: relative; left: auto; right: 0; top: 218px; width: 100%; height: 48px; background: #18263b; padding: 14px 34px; box-sizing: border-box; text-align: right; z-index: 99;}
+.news .layout div.pop-ul > div > div > .control strong {position: absolute; left: 34px; color: #fff; font-weight: 400;}
+.news .layout div.pop-ul div.popupzone .move a {position: absolute; top: 0; left: 0; height: 100%;}
+.news .layout div.pop-ul div.popupzone .move a img {width: 100%; overflow: hidden; border-top-left-radius: 20px; border-top-right-radius: 20px;}
+.news .layout div.pop-ul > div.movies > div > .move iframe {width: 100%; height: 82%;}
+.news .layout div.pop-ul > div.pub-noti > div > .control span.count {position: relative; color: #fff; margin-top: -3px; margin-right: 10px; font-weight: 400; display: inline-block; letter-spacing: 2px; vertical-align: middle;}
+.news .layout div.pop-ul > div.pub-noti > div > .control span.count span.total:before {content: '/';}
+.news .layout div.pop-ul > div.pub-noti > div > .control .btn-left {display: inline-block; overflow: hidden; width: 8px; height: 14px; background: url(../img/main_pop_leftarrow.png) no-repeat center center/contain; text-indent: 9999px;}
+.news .layout div.pop-ul > div.pub-noti > div > .control .btn-play {display: inline-block; overflow: hidden; width: 7px; height: 13px; background: url(../img/btn_play.png) no-repeat center center/contain; text-indent: 9999px; margin: 0 10px;}
+.news .layout div.pop-ul > div.pub-noti > div > .control .btn-stop {display: none; overflow: hidden; width: 7px; height: 11px; background: url(../img/main_pop_stop.png) no-repeat center center/contain; text-indent: 9999px; margin: 0 10px;}
+.news .layout div.pop-ul > div.pub-noti > div > .control .btn-right {display: inline-block; overflow: hidden; width: 8px; height: 14px; background: url(../img/main_pop_rightarrow.png) no-repeat center center/contain; text-indent: 9999px;}
+
+/*content(management)*/
+.management {padding-top: 165px; box-sizing: border-box; position: relative; background: url(../img/main_section04_bg.png) no-repeat center center/cover; overflow: hidden;}
+.management h3 {color: #fff;}
+.management p.tit-p {color: #fff; font-weight: 300;}
+.management ul {margin-top: 116px;}
+.management ul:after {content: ''; display: block; clear: both;}
+.management ul li {float: left; position: relative; width: 33.3333%; text-align: center; box-sizing: border-box; padding: 294px 0 0 0;}
+.management ul li:after, .management ul li:before {content: ''; position: absolute; display: block; background: #fff; width: 10px; height: 10px; border-radius: 50%; top: 127px;}
+.management ul li:after {left: 50%; margin-left: 122px;}
+.management ul li:before {right: 50%; margin-right: 126px;}
+.management ul li:first-child:before, .management ul li:last-child:after {display: none;}
+.management ul li a {display: inline-block;}
+.management ul li p.slim {font-size: 15px; line-height: 23px; letter-spacing: -0.6px; font-family: "Titillium Web"; font-weight: 300; color: #fff;}
+.management ul li p.slim:after {content: ''; display: block; position: absolute; top: 130px; left: 50%; margin-left: 135px; width: 205px; height: 5px; box-sizing: border-box; border-top: 2px dashed rgba(255,255,255,0.3);}
+.management ul li:last-child p.slim:after {display: none;}
+.management ul li p.slim:before {content: ''; display: block; position: absolute; background-repeat: no-repeat; background-size: contain; background-position: center center; top: 0; left: 50%; margin-left: -132px; width: 264px; height: 264px;}
+.management ul li:first-child p.slim:before {background-image: url(../img/main_sec4_icon1.png);}
+.management ul li p.bold {font-size: 28px; line-height: 41px; letter-spacing: -1.12px; font-weight: 700; color: #fff;}
+.management ul li.dynamic p.slim:before {background-image: url(../img/main_sec4_icon2.png);}
+.management ul li:last-child p.slim:before {background-image: url(../img/main_sec4_icon3.png);}
+
+/*content(recruit)*/
+.recruit {padding-top: 165px; box-sizing: border-box; position: relative; background: url(../img/main_section05_bg.png) no-repeat center center/cover;}
+.recruit:before {content: ''; display: block; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(70,52,22,0.6); z-index: 0;}
+.recruit .layout {position: relative;}
+.recruit .layout:before, .recruit .layout:after {content: ''; position: absolute; display: block; width: 1px; height: 200vh; top: 50%; margin-top: -100vh; background: rgba(255,255,255,0.5);}
+.recruit .layout:before {left: 30%;}
+.recruit .layout:after {right: 30%;}
+.recruit .layout h3 {color: #fff;}
+.recruit .layout p.tit-p {color: #fff; font-weight: 300;}
+.recruit .layout > ul {overflow: hidden; margin-top: 87px;}
+.recruit .layout > ul:after {content: ''; display: block; clear: both;}
+.recruit .layout > ul > li {position: relative; float: left; width: 30%; padding: 0 40px; text-align: center; box-sizing: border-box;}
+.recruit .layout > ul > li h4 {margin: 0; color: #fff; font-size: 28px; line-height: 41px; font-weight: 700; text-align: left;}
+.recruit .layout > ul > li.rec-1 {padding: 0 40px 0 0;}
+.recruit .layout > ul > li.rec-1 a {display: block; width: 100%; padding: 92px 0 52px; border: 1px solid #fff; box-sizing: border-box; border-top-width: 3px; margin-top: 20px; transition: all 0.3s ease;}
+.recruit .layout > ul > li.rec-1 a:hover {background-color: rgba(0,0,0,0.4); border-color: transparent;}
+.recruit .layout > ul > li.rec-1 a:first-child {margin-top: 0;}
+.recruit .layout > ul > li.rec-1 a h4:before {content: ''; display: block; position: absolute; left: 50%; top: -44px; background: url(../img/main_recruit_01.png) no-repeat center center/contain; transition: all 0.3s ease; width: 26px; height: 34px; margin-left: -13px;}
+.recruit .layout > ul > li.rec-1 a:last-child h4:before {background-image: url(../img/main_recruit_03.png); width: 29px; height: 31px; top: -41px; margin-left: -14.5px;}
+.recruit .layout > ul > li.rec-1 a h4 {position: relative; text-align: center;}
+
+.recruit .layout > ul > li.rec-2 {width: 40%;}
+.recruit .layout > ul > li a.more {width: 22px; height: 22px; position: absolute; top: 10px; right: 40px; background: url(../img/main_sec4_plus.png) no-repeat center center; text-indent: -9999px; transition: all 0.3s ease;}
+.recruit .layout > ul > li a.more:hover {transform: rotate(180deg); transition: all 0.3s ease;}
+.recruit .layout > ul > li.rec-2 div.employ {margin-top: 49px; padding: 0; border-top: 0; border-bottom: 0; overflow: hidden; box-sizing: border-box; text-align: left; color: #fff; font-weight: 300; font-size: 17px;}
+
+.recruit .layout > ul > li.rec-3 {padding: 0 0 0 40px;}
+.recruit .layout > ul > li.rec-3 a.more {right: 0;}
+.recruit .layout > ul > li.rec-3 div.notice-list {margin-top: 47.5px; border-top: 1px solid #fff; border-bottom: 1px solid #fff;}
+.recruit .layout > ul > li.rec-3 div.notice-list ul {display: table; table-layout: fixed; width: 100%; border-collapse: collapse; border-spacing: 0;}
+.recruit .layout > ul > li.rec-3 div.notice-list ul li {position: relative; display: table-row; border-bottom: 1px solid rgba(255,255,255,0.3); color: #fff;}
+.recruit .layout > ul > li.rec-3 div.notice-list ul li p {display: table-cell; width: 100%; padding: 5px; vertical-align: middle; text-align: left;}
+.recruit .layout > ul > li.rec-3 div.notice-list ul li p.subject {position: relative; padding: 16.5px 10px 20.5px 45px; box-sizing: border-box;}
+.recruit .layout > ul > li.rec-3 div.notice-list ul li p.subject a {display: block; color: #fff; font-size: 16px; line-height: 24px; font-weight: 300; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+.recruit .layout > ul > li.rec-3 div.notice-list ul li p.subject a:before {content: ''; position: absolute; width: 6px; height: 6px; display: block; background: #fff; border-radius: 50%; margin-top: -3px; top: 50%; left: 17px;}
+.recruit .layout > ul > li.rec-3 div.notice-list ul li.new p.subject a:before {width: 28px; height: 28px; margin-top: -14px; left: 7px; background: url(../img/board_new.png) no-repeat center center;}
+
+/*side-nav*/
+#side-nav {position: fixed; z-index: 100; margin-top: -142px; margin-right: 20px; top: 50%; right: 17px;}
+#side-nav:after {content: ''; display: block; width: 1px; height: 100%; background: #fff; position: absolute; right: 4px; top: 0; z-index: 0;}
+#side-nav ul {margin: 0; padding: 0;}
+#side-nav ul li {position: relative; width: 9px; height: 9px; margin-top: 46px;}
+#side-nav ul li:first-child {margin-top: 0;}
+#side-nav ul li a {position: relative; display: block; z-index: 1; background: #fff; width: 9px; height: 9px; margin: 0; border-radius: 50%;}
+#side-nav ul li a:hover {font-weight: bold;}
+#side-nav ul li a.active {color: #fff; width: 9px; height: 9px; margin: 0; color: #fff; background: #fff;}
+#side-nav ul li a.active:after {font-size: 30px; font-weight: 700; line-height: 46px; color: #fff; letter-spacing: -0.9px; opacity: 1; top: -20px;}
+#side-nav ul li a span {display: none; position: absolute; height: 4px; width: 4px; border: 0; border-radius: 50%; background: rgba(0,0,0,0.4); margin: -2px 0 0 -2px; transition: all 0.3s ease-out; z-index: 1;}
+#side-nav ul li a.active span {display: block; top: 50%; left: 50%; width: 25px; height: 36px; margin-top: -18px; margin-left: -12.5px; background: url(../img/fp-nav_active.png) no-repeat center center; text-indent: -9999px;}
+#side-nav ul li a:after {display: block; position: absolute; right: 30px; top: -2px; text-align: right; width: 135px; line-height: 13px; font-size: 22px; color: #fff; opacity: 0.7; letter-spacing: -0.63px;}
+#side-nav ul li:nth-child(1) a:after {content: '메인';}
+#side-nav ul li:nth-child(2) a:after {content: 'K-water';}
+#side-nav ul li:nth-child(3) a:after {content: '서비스';}
+#side-nav ul li:nth-child(4) a:after {content: '뉴스';}
+#side-nav ul li:nth-child(5) a:after {content: '신경영방침';}
+#side-nav ul li:nth-child(6) a:after {content: '채용';}

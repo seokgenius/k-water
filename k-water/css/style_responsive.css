@@ -1,0 +1,21 @@
+@charset 'utf-8';
+
+/* 1025~1440px */
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+    /*header*/
+    #header h1.logo {left: 25px; margin-left: 0;}
+    #header #tnb {right: 25px; margin-right: 0;}
+}
+
+/* ~1024px */
+@media screen and (max-width: 1024px) {
+    /*header*/
+    #header {position: relative; left: auto; top: auto; height: 57px;}
+    #header h1.logo {width: 67px; height: 57px; bottom: 0; left: 4%; margin-left: 0;}
+    #header #gnb {display: none;}
+    #header #tnb {bottom: 14px; top: auto; right: 3%; margin-right: 0;}
+    #header #tnb div.top-lang {display: none;}
+    #header #tnb a.search-btn-open {position: relative; right: auto; top: auto; margin: 0;}
+    /*side-nav*/
+    #side-nav {display: none;}
+}
