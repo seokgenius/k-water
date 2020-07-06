@@ -4,18 +4,289 @@
 @media screen and (min-width: 1025px) and (max-width: 1440px) {
     /*header*/
     #header h1.logo {left: 25px; margin-left: 0;}
+    #header #gnb ul.menu {max-width: 70%; margin: 0 auto 0 12.5%;}
+    #header #gnb ul.menu li ul.menu-sub {padding: 14px 20px 20px 20px;}
+    #header #gnb ul.menu li ul.menu-sub li a span {width: 120%;}
     #header #tnb {right: 25px; margin-right: 0;}
+    
+    /*footer*/
+    body#main #footer .layout {padding: 29px 15px;}
+    
+    #footer ul.sns-link {right: 355px;}
+    #footer div.site {right: 15px; width: 156px;}
+    #footer div.site.relate-site {right: 180px;}
+    #footer div.site ul {width: auto;}
+    #footer div.site a {width: auto;}
+    #footer div.info span.tel {margin-left: 5px;}
+    #footer div.info span.copy {display: block; margin-left: 0;}
+    #footer div.cert-mark {bottom: 29px; right: 15px;}
+    
+    /*service*/
+    .service ul.top-ul > li {padding: 25px 3.5%; min-height: 380px;}
+    .service ul.top-ul > li ul {padding-top: 40px;}
+    .service ul.top-ul > li ul li {font-size: 18px; word-break: keep-all;}
+    .service ul.bot-ul li:last-child p:last-child {font-size: 15px;}
+    /*news*/
+    .news .layout div.pop-ul > div.webzines img {width: 68px; height: 87px; right: 20px;}
+    
+    /*recruit*/
+    .recruit .layout > ul > li.rec-3 div.notice-list ul li p.subject {width: 100%;}
+    .recruit .layout > ul > li.rec-3 div.notice-list ul li p.date {text-align: right; width: 55%;} 
+    
 }
 
 /* ~1024px */
 @media screen and (max-width: 1024px) {
+    /*common*/
+    /*body#main {overflow: hidden;}*/
+    
     /*header*/
-    #header {position: relative; left: auto; top: auto; height: 57px;}
+    #header {position: fixed; left: auto; top: auto; height: 57px;}
     #header h1.logo {width: 67px; height: 57px; bottom: 0; left: 4%; margin-left: 0;}
+    #header h1.logo a:after {background-size: contain;}
     #header #gnb {display: none;}
     #header #tnb {bottom: 14px; top: auto; right: 3%; margin-right: 0;}
     #header #tnb div.top-lang {display: none;}
-    #header #tnb a.search-btn-open {position: relative; right: auto; top: auto; margin: 0;}
+    #header #tnb a.search-btn-open {position: relative; right: 45px; top: 40px; margin: 0; background: url(../img/main_searh_t.png) no-repeat center center;}
+    #header div.search {top: 57px;}
+    #header #tnb a.all-menu {display: block; position: relative; right: auto; top: 40px; background-image: url(../img/main_allmenu.png); background-repeat: no-repeat; background-position: center 50%; text-indent: -9999px; transition: all 0.3s ease;}
+    #header #tnb a.all-menu:before {content:''; position: absolute; display: block; top: 50%; left: -14px; margin-top: -8px; width: 1px; height: 16px; background: rgba(14,48,109,0.15);}
+    #header #tnb a.all-menu.on {transform: rotateX(90deg);}
+    
+    /*mobile gnb*/
+    div.mobile-header {opacity: 0; overflow: hidden; position: fixed; z-index: 800; display: block; width: 100%; height: 100%; padding-top: 57px; right: -100%; box-sizing: border-box; transition: all 0.5s ease;}
+    div.mobile-header.show {opacity: 1; right: 0;}
+    div.mobile-header .inner {position: relative; width: 100%; height: 100%; float: right; margin-right: -460px; margin: 0; background: #fff url(../img/mob_gnb_bg.png) no-repeat bottom left; box-sizing: border-box;}
+    div.mobile-header .inner .binds {max-width: 1200px; margin: 0 auto; height: 100%; padding: 0 20px; box-sizing: border-box;}
+    div.mobile-header .inner .binds ul.nav {position: relative; z-index: 10;}
+    div.mobile-header .inner .binds ul.nav li {border-bottom: 1px solid #cbcbcb; width: auto; float: none; padding: 0; box-sizing: border-box;}
+    div.mobile-header .inner .binds ul.nav li a {position: relative; display: block; font-size: 19px; line-height: 24px; padding: 21px 20px 21px 34px;}
+    div.mobile-header .inner .binds ul.nav li a.on {color: #3d66c4;}
+    div.mobile-header .inner .binds ul.nav li a span {position: relative; line-height: 24px; font-size: 16px; font-weight: 500;}
+    div.mobile-header .inner .binds ul.nav > li > a:after {content: ''; display: block; position: absolute; right: 20px; top: 50%; margin-top: -9px; width: 18px; height: 18px; background: url(../img/mob_gnb_bul.png) no-repeat center 50%;}
+    div.mobile-header .inner .binds ul.nav li ul {display: none; background: #ecf3fb; border-top: 1px solid #b1c9e5; margin-top: 0; padding: 20px 20px 25px 34px;}
+    div.mobile-header .inner .binds ul.nav li ul.show {display: block;}
+    div.mobile-header .inner .binds ul.nav li ul li:first-child {border-top: 0;}
+    div.mobile-header .inner .binds ul.nav li ul li {margin-top: 0; padding: 0;}
+    div.mobile-header .inner .binds ul.nav li ul li a {position: relative; padding: 11px 0 11px 15px; font-size: 16px; line-height: 21px; color: #000;}
+    div.mobile-header .inner .binds ul.nav li ul li a span {font-weight: 400; line-height: 21px;}
+    
+    /*section 공통*/
+    #content section {padding-top: 80px; padding-bottom: 105px;}
+    section h3 {font-size: 30px; line-height: 34px; margin-bottom: 8px;}
+    section h3:before {width: 24px; height: 19px; top: -25px; margin-left: -12px;}
+    section.service h3:before, section.management h3:before, section.recruit h3:before {background-size: contain;}
+    section p.tit-p {font-size: 14px; line-height: 20px; font-weight: 400;}
+    
+    /*footer*/
+    body#main #footer {height: 225px;}
+    body#main #footer .layout {padding: 29px 15px;}
+    #footer ul.menu-link li {margin: 0 0 0 14px; padding: 0 0 0 14px;}
+    #footer ul.sns-link {top: auto; bottom: -29px; left: auto; right: 52%;}
+    #footer div.site {right: 20px; width: 144px;}
+    #footer div.site ul.open {width: 144px;}
+    #footer div.site.relate-site {right: 173px;}
+    #footer div.site a {width: 144px;}
+    #footer div.info {text-align: center;}
+    #footer div.info span.tel {margin-left: 5px;}
+    #footer div.info span.copy {display: block; margin-left: 0;}
+    #footer div.cert-mark {bottom: auto; margin-top: 25px; left: 52%;}
+    #footer div.cert-mark img:first-child {vertical-align: top;}
+    
+    /*top-btn*/
+    body#main a.top-btn {display: block; background-size: contain; width: 60px; height: 60px; right: 25px; bottom: 24px;}
+    
     /*side-nav*/
     #side-nav {display: none;}
+    
+    /*content*/
+    #content div.scroll {display: none;}
+    
+    /*main*/
+    .main .slider .control {bottom: 0;}
+    .main .slider .control ul {width: 100%; text-align: center; margin-left: 0;}
+    .main .slider .move ul li span.slogan span.title {font-size: 38px; line-height: 47px; margin-bottom: 0;}
+    .main .slider .move ul li span.slogan span.title span {font-size: 24px; line-height: 24px; padding: 10px 0 0;}
+    .main .slider .control a.btn-play {position: absolute; left: 30%; margin-top: 52px;}
+    
+    /*k-water*/
+    .k-water .layout h3 {line-height: 45px;}
+    .k-water .layout h3:before {top: -15px;}
+    .k-water .layout > ul > li:first-child > a.ceo {height: 150px;}
+    .k-water .layout > ul > li:first-child > a.safe {height: 150px;}
+    .k-water .layout > ul > li.popup-zone {height: 300px;}
+    .k-water .layout > ul > li.popup-zone > div.control {top: 267px;}
+    .k-water .layout > ul > li.popup-zone > div.control a.btn-right span {display: none;}
+    .k-water .layout > ul > li.popup-zone > div.control strong {font-size: 14px; left: 14px; font-weight: 400;}
+    .k-water .layout > ul > li.popup-zone > div.control span.count {font-size: 14px; margin-right: 30px; letter-spacing: normal;}
+    .k-water .layout > ul > li.popup-zone > div.control a.btn-play {display: none;}
+    .k-water .layout > ul > li.popup-zone > div.control a.btn-left {position: absolute; right: 60px; top: 20px;}
+    .k-water .layout > ul > li.popup-zone > div.control a.btn-right {position: absolute; right: 18px; top: 20px;}
+    .k-water .layout > ul > li.popup-zone > div.move ul li a img {width: 175%;}
+    .k-water .layout > ul > li > a p {display: none;}
+    .k-water .layout > ul > li > a h4 {font-size: 18px; margin: 0;}
+    .k-water .layout > ul > li > a h4:after {display: none;}
+    .k-water .layout > ul > li:last-child > a.emp {height: 150px;}
+    .k-water .layout > ul > li:last-child > a.sns-area {height: 150px;}
+    .k-water .layout > ul > li:last-child > a.sns-area {padding: 20px;}
+    .k-water .layout > ul > li:last-child > a.sns-area p.sns {padding-top: 48px; float: right;}
+    .k-water .layout > ul > li:last-child > a.sns-area p.sns span {width: 30px; height: 30px;}
+    .k-water .layout > ul > li:last-child > a.sns-area p.sns .yt {left: auto; right: auto;}
+    .k-water .layout > ul > li:last-child > a.sns-area p.sns .fb {left: auto; right: 79px;}
+    .k-water .layout > ul > li:last-child > a.sns-area p.sns .in {left: auto; right: 39px;}
+    
+    /*service*/
+    .service h3:before {width: 24px; height: 19px; top: -25px; margin: -12px; background-size: contain;}
+    .service ul.top-ul > li {width: 49%; min-height: auto; padding: 0; margin-left: 1%;}
+    .service ul.top-ul > li:after {display: none;}
+    .service ul.top-ul > li > span {font-size: 20px; line-height: 59px;}
+    .service ul.top-ul > li ul {width: 100%; padding-top: 0;}
+    .service ul.top-ul > li ul li {padding: 14px 0; font-size: 15px; line-height: 18px; width: 50%; float: left; box-sizing: border-box; text-align: center; border-top: 1px solid rgba(255,255,255,0.3);}
+    .service ul.top-ul > li ul li:before {display: none;}
+    .service ul.top-ul > li ul li:first-child, .service ul.top-ul > li ul li:nth-child(3) {border-right: 1px solid rgba(255,255,255,0.3);}
+    .service ul.top-ul > li ul li:last-child {width: 100%;}
+    .service ul.top-ul > li ul li:a {font-size: 16px; line-height: 23px; font-weight: 200;}
+    .service ul.top-ul > li:nth-child(3) {margin-left: 0;}
+    .service ul.top-ul > li:nth-child(3), .service ul.top-ul > li:nth-child(4) {margin-top: 20px;}
+    .service ul.top-ul > li:nth-child(3) ul li, .service ul.top-ul > li:nth-child(4) ul li {padding: 27px 0;}
+    .service ul.top-ul > li:nth-child(3) ul li:last-child {width: 50%;}
+    .service ul.bot-ul li p {font-size: 18px;}
+    .service ul.bot-ul li p:last-child:before {display: none;}
+    .service ul.bot-ul > li:last-child p:first-child {width: 100%;}
+    .service ul.bot-ul > li:last-child p:last-child {display: none;}
+    /*news*/
+    .news .layout .news-area ul li .txts {font-size: 17px; word-break: normal;}
+    .news .layout div.pop-ul > div {width: 48%;}
+    .news .layout div.pop-ul > div.webzines {height: 266px;}
+    .news .layout div.pop-ul > div.webzines img {width: 124px; height: 159px; top: 20px; right: 20px;}
+    .news .layout div.pop-ul > div.webzines p.txts {font-size: 13px; width: calc(100% - 125px); margin-top: 15px; padding-top: 15px;}
+    .news .layout div.pop-ul > div.webzines p.vol:after {bottom: -18px;}
+    .news .layout div.pop-ul > div.webzines div.btn-box a.btn {width: 50%;}
+    
+    /*management*/
+    .management ul {margin-top: 102px;}
+    .management ul li {padding: 182px 0 0 0;}
+    .management ul li:before {width: 6px; height: 6px; top: 83px; margin-right: 80px;}
+    .management ul li:after {width: 6px; height: 6px; top: 83px; margin-left: 76px;}
+    .management ul li p.slim:before {width: 166px; height: 166px; margin-left: -83px;}
+    .management ul li p.slim:after {top: 85px; margin-left: 85px; width: 150px;}
+    .management ul li p.bold {font-size: 19px; line-height: 28px; letter-spacing: -0.76px;}
+    
+    /*recruit*/
+    body#main .recruit .layout:after, .recruit .layout:before {display: none;}
+    .recruit .layout > ul {margin-top: 36px;}
+    .recruit .layout > ul > li {float: none; width: 100%; padding: 0; margin-top: 51px;}
+    .recruit .layout > ul > li h4 {font-size: 23px; line-height: 34px;}
+    .recruit .layout > ul > li.rec-1 {padding-right: 0; margin-top: 0; height: 90px;}
+    .recruit .layout > ul > li.rec-1 a {float: left; width: 50%; padding: 26px 0 28px; border-top-width: 1px;}
+    .recruit .layout > ul > li.rec-1 a:last-child {margin-top: 0; border-left: 0;}
+    .recruit .layout > ul > li.rec-1 a h4 {margin-left: 42px; display: inline-block;}
+    .recruit .layout > ul > li.rec-1 a h4:before {top: 0; left: -28px;}
+    .recruit .layout > ul > li.rec-1 a:last-child h4:before {top: 0;}
+    .recruit .layout > ul > li.rec-2 {width: 100%;}
+    .recruit .layout > ul > li a.more {right: 0; width: 20px; height: 20px;}
+    .recruit .layout > ul > li.rec-2 div.employ {margin-top: 22.5px;}
+    .recruit .layout > ul > li.rec-3 {padding-left: 0;}
+    .recruit .layout > ul > li.rec-3 div.notice-list {margin-top: 22.5px;}
+    .recruit .layout > ul > li.rec-3 div.notice-list ul li p.date {width: 80px;}
+    
+}
+
+/*~840px*/
+@media screen and (max-width: 840px) {
+    /*main*/
+    .main .slider .control a.btn-play {left: 25%;}
+    /*k-water*/
+    .k-water .layout > ul > li {width: 28.75%;}
+    .k-water .layout > ul > li.popup-zone {width: 40%;}
+    .k-water .layout > ul > li.popup-zone > div.control strong {font-size: 12px;}
+    .k-water .layout > ul > li.popup-zone > div.control span.count {margin-right: 20px; font-size: 12px;}
+    
+}
+
+/*~640px*/
+@media screen and (max-width: 640px) {
+    /*common*/
+    /*body#main {overflow: hidden;}*/
+    
+    /*section 공통*/
+    section p.tit-p {display: none;}
+    
+    /*footer*/
+    body#main #footer {height: auto;}
+    body#main #footer .layout {width: 100%; padding: 20px 3% 18px; text-align: center;}
+    #footer div.site {display: none;}
+    #footer ul.menu-link {padding-bottom: 12px; display: inline-block;}
+    #footer div.info {padding-top: 18.5px; margin-top: 0;}
+    #footer ul.sns-link {height: auto; right: 50%; margin-right: -143.5px; bottom: 67px;}
+    #footer div.cert-mark {position: static; margin-top: 55px;}
+    
+    /*main*/
+    .main .slider .control a[class*="btn-"] {left: 20%;}
+    .main .slider .move ul li span.slogan span.title:before {width: 13px; height: 17px; top: -50px; margin-left: -6.5px; background-size: contain;}
+    .main .slider .move ul li span.slogan span.title {font-size: 24px; line-height: 33px; padding-bottom: 40px; letter-spacing: -0.96px;}
+    .main .slider .move ul li span.slogan span.title span {font-size: 16px; line-height: 26px; padding: 0; margin-bottom: 0; letter-spacing: -0.6px;}
+    
+    /*k-water*/
+    .k-water {height: 50vh;}
+    .k-water .layout > ul > li {position: relative; float: none; width: 100%; height: auto;}
+    .k-water .layout > ul > li:first-child > a.ceo {background: #1e2d4c; padding: 19.5px; 0 0 18.5px; height: 65px; margin-bottom: 12px; border-bottom-right-radius: 20px;}
+    .k-water .layout > ul > li:first-child > a.ceo h4 {padding-right: 50%; box-sizing: border-box;}
+    .k-water .layout > ul > li:first-child > a.safe {background: #97c4ff; width: 100%; height: 65px; margin-bottom: 12px; padding: 17.5px 0 0 18.5px;}
+    .k-water .layout > ul > li:last-child > a.emp {position: absolute; width: 100%; top: 0; right: 5px; background: #d7e9ff; height: 65px; padding: 17.5px 0 0 18.5px; margin-bottom: 12px;}
+    .k-water .layout > ul > li.popup-zone {display: none;}
+    .k-water .layout > ul > li:last-child > a.sns-area {display: none;}
+    .k-water .layout > ul > li > a .btn.arrow {top: 50%; right: 26px; margin-top: -4.45px; width: 46.5px; height: 8.9px;}
+    
+    /*service*/
+    .service ul.top-ul > li {width: 100%; margin-left: 0;}
+    .service ul.top-ul > li:nth-child(2) {margin-top: 20px;}
+    .service ul.bot-ul li {width: 100%;}
+    .service ul.bot-ul li:first-child p:first-child {text-align: right;}
+    .service ul.bot-ul li:first-child p:last-child {text-align: left; padding-left: 20px;}
+    
+    /*news*/
+    .news .layout {padding-right: 45px;}
+    .news .layout div.pop-ul > div {width: 100%;}
+    .news .layout .news-area ul li:nth-child(1) {width: 46%;}
+    .news .layout .news-area ul li:nth-child(2) {width: 46%; float: right;}
+    .news .layout .news-area ul li:nth-child(3) {display: none;}
+    .news .layout .news-area ul li:nth-child(4) {display: none;}
+    .news .layout div.pop-ul > div.webzines {height: 204px;}
+    .news .layout div.pop-ul > div.webzines p.vol:after {top: 28px;}
+    .news .layout div.pop-ul > div.webzines p.txts {margin-top: 0;}
+    .news .layout div.pop-ul > div.webzines div.btn-box {padding: 0 170px 0 25px;}
+    
+    /*management*/
+    .management ul {width: 300px; margin: 40px auto 0;}
+    .management ul li {float: none; width: 100%; padding: 32px 0 32px 130px; margin-top: 45px; text-align: left;}
+    .management ul li:after {top: 107px; left: 0; margin-left: 52px;}
+    .management ul li:before {top: -3px; right: auto; left: 0; margin-right: 0px; margin-left: 52px;}
+    .management ul li:first-child {margin-top: 0;}
+    .management ul li p.slim:before {width: 112px; height: 112px; top: 50%; margin-top: -56px; left: 0; margin-left: 0;}
+    .management ul li p.slim:after {top: 132px; left: 0; margin-left: 36px; width: 35px; transform: rotate(90deg);}
+    
+    /*recruit*/
+    .recruit .layout > ul > li.rec-1 a h4:before {display: none;}
+    .recruit .layout > ul > li.rec-1 a h4 {margin-left: 0; font-size: 19px; line-height: 28px;}
+    .recruit .layout > ul > li.rec-2 div.employ img {width: 100%;}
+    .recruit .layout > ul > li.rec-3 div.notice-list ul li p.subject a {font-size: 15px;}
+}
+
+@media screen and (max-width: 480px) {
+    /*common*/
+    #footer div.site {width: 150px;}
+    #footer div.site ul.open {width: 100%;}
+    /*main*/
+    .main .slider .control a.btn-play {left: 10%;}
+    /*news*/
+    .news .layout .news-area {display: none;}
+    .news .layout div.pop-ul > div.webzines {padding: 25px 18px;}
+    .news .layout div.pop-ul > div.webzines div.btn-box {padding-bottom: 29px; padding-right: 0; padding-left: 18px; bottom: 0;}
+    .news .layout div.pop-ul > div.webzines div.btn-box a.btn {display: block; float: none; margin-left: 0; max-width: 141px; width: 43%;}
+    .news .layout div.pop-ul > div.webzines div.btn-box a.btn:first-child {border-right: 1px solid #66718a; border-bottom: 0;}
+    .news .layout div.pop-ul > div.webzines p.vol:after {display: none;}
+    .news .layout div.pop-ul > div.webzines p.txts {display: none;}
+    .news .layout div.pop-ul > div.webzines img {top: 25px; right: 20px; width: 117px; height: 149px;}
+    .news .layout div.pop-ul > div {width: 100%;}
 }

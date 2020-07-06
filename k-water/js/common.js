@@ -1,4 +1,4 @@
-// DinoWorks Common JS
+// Common JS
 $(document).ready(function(){
     preventDefaultAnchor();
     

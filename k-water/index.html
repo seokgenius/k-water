@@ -1,22 +1,86 @@
 <!doctype html>
 <html lang="ko">
     <head>
-        <meta charset="utf-8">
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>K Water</title>
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/style_responsive.css">
-        <link rel="icon" href="img/favicon.ico">
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/style_responsive.css" />
+        <link rel="icon" href="img/favicon.ico" />
         <script src="js/jquery-3.5.1.min.js"></script>
         <script src="js/common.js"></script>
         <script src="js/main.js"></script>
-        <script src="js/parallex.js"></script>
+        <script src="js/scroll.js"></script>
+        <script src="js/navigation.js"></script>
     </head>
     <body id="main">
         <a href="#content" id="skip-nav">본문 바로가기</a>
         <!--header-->
+        <div class="mobile-header">
+            <div class="inner">
+                <div class="binds">
+                    <ul class="nav">
+                        <li class="menu1">
+                            <a href="#"><span>열린경영</span></a>
+                            <ul class="menu-sub">
+                                <li><a href="#"><span>경영공시</span></a></li>
+                                <li><a href="#"><span>안전·환경</span></a></li>
+                                <li><a href="#"><span>지속가능경영</span></a></li>
+                                <li><a href="#"><span>윤리경영</span></a></li>
+                                <li><a href="#"><span>사회적가치실현</span></a></li>
+                                <li><a href="#"><span>일자리</span></a></li>
+                                <li><a href="#"><span>국민 참여예산</span></a></li>
+                                <li><a href="#"><span>사회공헌</span></a></li>
+                            </ul>
+                        </li>
+                        <li class="menu2">
+                            <a href="#"><span>국민소통</span></a>
+                            <ul class="menu-sub">
+                                <li><a href="#"><span>고객헌장</span></a></li>
+                                <li><a href="#"><span>고객광장</span></a></li>
+                                <li><a href="#"><span>고객지원</span></a></li>
+                                <li><a href="#"><span>맑은물공급 요금</span></a></li>
+                                <li><a href="#"><span>정보공개</span></a></li>
+                            </ul>
+                        </li>
+                        <li class="menu3">
+                            <a href="#"><span>새소식</span></a>
+                            <ul class="menu-sub">
+                                <li><a href="#"><span>게시판</span></a></li>
+                                <li><a href="#"><span>채용정보</span></a></li>
+                                <li><a href="#"><span>뉴스룸</span></a></li>
+                                <li><a href="#"><span>홍보광장</span></a></li>
+                                <li><a href="#"><span>물사랑공모전</span></a></li>
+                            </ul>
+                        </li>
+                        <li class="menu4">
+                            <a href="#"><span>대국민 서비스</span></a>
+                            <ul class="menu-sub">
+                                <li><a href="#"><span>물안심 서비스</span></a></li>
+                                <li><a href="#"><span>물나눔 서비스</span></a></li>
+                                <li><a href="#"><span>물융합 서비스</span></a></li>
+                            </ul>
+                        </li>
+                        <li class="menu5">
+                            <a href="#"><span>기관소개</span></a>
+                            <ul class="menu-sub">
+                                <li><a href="#"><span>일반현황</span></a></li>
+                                <li><a href="#"><span>CEO</span></a></li>
+                                <li><a href="#"><span>조직 및 연락처</span></a></li>
+                                <li><a href="#"><span>CI</span></a></li>
+                                <li><a href="#"><span>선수단</span></a></li>
+                                <li><a href="#"><span>찾아오시는길</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
         <header id="header">
-            <h1 class="logo"><a href="/">K Water</a></h1>
+            <h1 class="logo"><a href="#">K Water</a></h1>
             <nav id="gnb">
+                <div id="blind"><span></span></div>
                 <ul class="menu">
                     <li class="menu1">
                         <a href="#"><span>열린경영</span></a>
@@ -77,6 +141,7 @@
                     <a href="#">ENGLISH</a>
                 </div>
                 <a href="#" class="search-btn-open">통합검색</a>
+                <a href="#" class="all-menu">전체메뉴</a>
             </nav>
             <div class="search">
                 <div class="layout">
@@ -92,10 +157,10 @@
         <!--콘텐츠 영역-->
         <main id="content">
             <div class="scroll">
-                <a href="#scrolldown">다음페이지로</a>
+                <a href="#">다음페이지로</a>
             </div>
             <!--메인-->
-            <section class="main">
+            <section class="main scroll-page">
                 <div class="slider">
                     <div class="control">
                         <ul>
@@ -143,7 +208,7 @@
             </section>
             <!--메인 끝-->
             <!--K-water-->
-            <section class="k-water">
+            <section class="k-water scroll-page">
                 <div class="layout">
                     <h3>K-water</h3>
                     <p class="tit-p">국가 물안전과 국민 물복지의 초석을 다져온 K-water!</p>
@@ -165,11 +230,9 @@
                         <li class="popup-zone">
                             <div class="control">
                                 <strong>K-water 팝업존</strong>
-                                <span class="count">1
-                                    <span> 7</span>
-                                </span>
+                                <span class="count"></span>
                                 <a href="#" class="btn-left">
-                                    <span>이전</span>
+                                    <span></span>
                                 </a>
                                 <a href="#" class="btn-play">
                                     <span>재생</span>
@@ -178,18 +241,21 @@
                                     <span>정지</span>
                                 </a>
                                 <a href="#" class="btn-right">
-                                    <span>다음</span>
+                                    <span></span>
                                 </a>
                             </div>
                             <div class="move">
+                                <p class="dummy">
+                                    <img src="img/kwater_pop1.png" alt="">
+                                </p>
                                 <ul>
                                     <li data-count="1"><a href="#"><img src="img/kwater_pop1.png" alt="환경 데이터에 날개를 달아주세요 대국민 환경 빅데이터 공모전 과제공모 환경 빅데이터 플랫폼 ~2020. 8. 31(월)까지"></a></li>
-                                    <!--<li data-count="2"><a href="#"><img src="img/kwater_pop2.png" alt="2020년 K-water 대학생 서포터즈 14기 모집 '형태'를 찾습니다. 형태가 없는 물, 여러분의 창의력이 새로운 형태가 됩니다."></a></li>
+                                    <li data-count="2"><a href="#"><img src="img/kwater_pop2.png" alt="2020년 K-water 대학생 서포터즈 14기 모집 '형태'를 찾습니다. 형태가 없는 물, 여러분의 창의력이 새로운 형태가 됩니다."></a></li>
                                     <li data-count="3"><a href="#"><img src="img/kwater_pop3.png" alt="국민의 생각을 물처럼 담는 2021년 K-water 국민참여예산 아이디어 공모 2020년 4월 29일 ~ 7월 31일"></a></li>
                                     <li data-count="4"><a href="#"><img src="img/kwater_pop4.png" alt="K-water와 함께하는 미세먼지 국민행동요령 바로가기"></a></li>
                                     <li data-count="5"><a href="#"><img src="img/kwater_pop5.png" alt="K-water와 함께하는 물 절약 Know-How"></a></li>
                                     <li data-count="6"><a href="#"><img src="img/kwater_pop6.png" alt="국민의 생각이 단비가 되어 K-water 미래의 물길이 됩니다. 제안, 공감, 대화 등으로 여러분의 생각을 들려주세요! "></a></li>
-                                    <li data-count="7"><a href="#"><img src="img/kwater_pop7.png" alt="K-water 안심제보 변호사제 ①비위제보·상담 ②대리 제보 ③결과 통보 ④결과 대리통보 "></a></li>-->
+                                    <li data-count="7"><a href="#"><img src="img/kwater_pop7.png" alt="K-water 안심제보 변호사제 ①비위제보·상담 ②대리 제보 ③결과 통보 ④결과 대리통보 "></a></li>
                                 </ul>
                             </div>
                         </li>
@@ -218,7 +284,7 @@
             </section>
             <!--K-water 끝-->
             <!--서비스-->
-            <section class="service">
+            <section class="service scroll-page">
                 <div class="layout">
                     <h3>서비스</h3>
                     <p class="tit-p">K-water의 서비스에 쉽고 빠르게 접근해보세요.</p>
@@ -275,7 +341,7 @@
             </section>
             <!--서비스 끝-->
             <!--뉴스-->
-            <section class="news">
+            <section class="news scroll-page">
                 <div class="layout">
                     <h3>뉴스</h3>
                     <p class="tit-p">K-water의 다양한 소식을 공유합니다.</p>
@@ -357,7 +423,7 @@
                             <div class="popupzone">
                                 <div class="control">
                                     <strong class="tit">공공알림</strong>
-                                    <span class="count">1<span class="total">7</span></span>
+                                    <span class="count"></span>
                                     <a href="#" class="btn-left">
                                         <span>이전</span>
                                     </a>
@@ -374,12 +440,12 @@
                                 <div class="move">
                                     <ul>
                                         <li><a href="#"><img src="img/pub-noti1.png" alt="2020년 환경부 우수 환경도서 독후감 공모대회"></a></li>
-                                        <!--<li><a href="#"><img src="img/pub-noti2.png" alt="2020  국민추천 포상 우리가 좋아하는 평범하지만 특별한 이웃 지금 바로 추천해주세요 바로가기 행정안전부"></a></li>
+                                        <li><a href="#"><img src="img/pub-noti2.png" alt="2020  국민추천 포상 우리가 좋아하는 평범하지만 특별한 이웃 지금 바로 추천해주세요 바로가기 행정안전부"></a></li>
                                         <li><a href="#"><img src="img/pub-noti3.png" alt="예산낭비신고 사례집 (기획재정부)"></a></li>
                                         <li><a href="#"><img src="img/pub-noti4.png" alt="세상을 바꾸는 용기 부패.공익신고"></a></li>
                                         <li><a href="#"><img src="img/pub-noti5.png" alt="국민권익위원회 공직자의 소극행정, 국민신문고에 신고하세요! 소극행정 신고센터"></a></li>
                                         <li><a href="#"><img src="img/pub-noti6.png" alt="대한민국 안전신고 생활화, 안전신문고"></a></li>
-                                        <li><a href="#"><img src="img/pub-noti7.png" alt="화재발생 시 국민행동요령"></a></li>-->
+                                        <li><a href="#"><img src="img/pub-noti7.png" alt="화재발생 시 국민행동요령"></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -389,7 +455,7 @@
             </section>
             <!--뉴스 끝-->
             <!--신경영방침-->
-            <section class="management">
+            <section class="management scroll-page">
                 <div class="layout">
                     <h3>新경영방침</h3>
                     <p class="tit-p">세계 최고의 물 종합 플랫폼 기업</p>
@@ -417,7 +483,7 @@
             </section>
             <!--신경영방침 끝-->
             <!--채용-->
-            <section class="recruit">
+            <section class="recruit scroll-page">
                 <div class="layout">
                     <h3>채용</h3>
                     <p class="tit-p">K-water의 소중한 가족이 되어주세요.</p>
@@ -473,7 +539,7 @@
             <!--채용 끝-->
         </main>
         <!--footer-->
-        <footer id="footer">
+        <footer id="footer" class="scroll-page">
             <div class="layout">
                 <ul class="menu-link">
                     <li><a href="#">개인정보처리방침</a></li>
@@ -538,6 +604,8 @@
             </div>
         </footer>
         <!--footer 끝-->
+        <!--TOP 버튼-->
+        <!--<a href="#" class="top-btn">TOP</a>-->
         <!--사이드 메뉴(플로팅)-->
         <aside id="side-nav">
             <ul>
