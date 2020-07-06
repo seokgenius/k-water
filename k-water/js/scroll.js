@@ -15,7 +15,7 @@ $(document).ready(function (){
             checkScroll();
         });
     
-        // 중하단 마우스 모양 클릭시 다음 섹션으로 넘어
+        // 중하단 마우스 모양 클릭시 다음 섹션으로 넘어감
         $('#content div.scroll a').on('click', function() {
             showPage(pageNext);
         });

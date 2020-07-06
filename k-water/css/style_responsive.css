@@ -37,9 +37,6 @@
 
 /* ~1024px */
 @media screen and (max-width: 1024px) {
-    /*common*/
-    /*body#main {overflow: hidden;}*/
-    
     /*header*/
     #header {position: fixed; left: auto; top: auto; height: 57px;}
     #header h1.logo {width: 67px; height: 57px; bottom: 0; left: 4%; margin-left: 0;}
@@ -196,6 +193,7 @@
 @media screen and (max-width: 840px) {
     /*main*/
     .main .slider .control a.btn-play {left: 25%;}
+    
     /*k-water*/
     .k-water .layout > ul > li {width: 28.75%;}
     .k-water .layout > ul > li.popup-zone {width: 40%;}
@@ -205,10 +203,7 @@
 }
 
 /*~640px*/
-@media screen and (max-width: 640px) {
-    /*common*/
-    /*body#main {overflow: hidden;}*/
-    
+@media screen and (max-width: 640px) {    
     /*section 공통*/
     section p.tit-p {display: none;}
     
@@ -277,8 +272,10 @@
     /*common*/
     #footer div.site {width: 150px;}
     #footer div.site ul.open {width: 100%;}
+    
     /*main*/
     .main .slider .control a.btn-play {left: 10%;}
+    
     /*news*/
     .news .layout .news-area {display: none;}
     .news .layout div.pop-ul > div.webzines {padding: 25px 18px;}

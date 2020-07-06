@@ -1,4 +1,12 @@
 $(document).ready(function() {
+    /*a 태그 기본 이벤트 방지*/
+    preventDefaultAnchor();
+    function preventDefaultAnchor() {
+        $(document).on('click', 'a[href="#"]', function(e) {
+            e.preventDefault();
+        });
+    }
+    
     /*header*/
     $('#header #gnb ul.menu li').on('mouseenter focusin', function() {
         $('#header').addClass('active');
@@ -33,6 +41,17 @@ $(document).ready(function() {
         $(this).toggleClass('click');
     });
     
+    /* mobile-header */
+    $('#header #tnb a.all-menu').on('click', function() {
+       $('div.mobile-header').toggleClass('show');
+       $('div.mobile-header .inner').css({'margin-right': 0});        
+       $('div.mobile-header .inner .binds ul.nav li a').on('click', function() {
+           $(this).next().toggleClass('show');
+           $('div.mobile-header .inner .binds ul.nav li a').removeClass('on');
+           $(this).addClass('on');
+       });
+    });
+    
     /*footer*/
     $('#footer div.site:eq(0) > a').on('click focusin', function() {
         $('#footer div.site ul:eq(0)').toggleClass('open');
@@ -40,6 +59,7 @@ $(document).ready(function() {
     $('#footer div.site:eq(1) > a').on('click focusin', function() {
         $('#footer div.site ul:eq(1)').toggleClass('open');
     });
+    
     /*main-slider*/
     var numSlide = $('.main .slider .move ul li').length;
     var slideNow = 0;

@@ -16,7 +16,7 @@ table {table-layout:fixed; border-collapse:collapse; border-spacing:0;}
 a {text-decoration: none; color: #222;}
 
 /*body*/
-body#main {/*overflow: hidden; */height: 100%;}
+body#main {height: 100%;}
 body#main .layout {position: relative; max-width: 1440px; margin: 0 auto; box-sizing: border-box; z-index: 5;}
 body#main .layout:after {content: ''; display: block; clear: both;}
 
@@ -43,8 +43,8 @@ a#skip-nav:focus {top: 0;}
 #header #gnb ul.menu li > a {width: 100%; display: block; height: 70px; box-sizing: border-box; font-size: 21px; line-height: 21px; text-align: center;}
 #header #gnb ul.menu li > a span {display: inline-block; vertical-align: top; height: 100%; padding: 20px 0; box-sizing: border-box; line-height: 21px;}
 #header #gnb ul.menu li:hover > a span, #header #gnb ul.menu li:focus-within > a span {color: #3d66c4;}
-#header #gnb ul.menu li ul.menu-sub {display: none; position: relative; width: 100%; height: 0; /*opacity: 0;*/ padding: 14px 30px 20px 30px; box-sizing: border-box; border-top: 1px solid transparent; transition: all 0.3s ease; background: #fff;}
-#header #gnb ul.menu li ul.menu-sub.on {height: 315px; display: block; /*opacity: 1;*/ background: #ecf3fb; border-top-color: #b1c9e5; box-sizing: border-box;}
+#header #gnb ul.menu li ul.menu-sub {display: none; position: relative; width: 100%; height: 0; padding: 14px 30px 20px 30px; box-sizing: border-box; border-top: 1px solid transparent; transition: all 0.3s ease; background: #fff;}
+#header #gnb ul.menu li ul.menu-sub.on {height: 315px; display: block; background: #ecf3fb; border-top-color: #b1c9e5; box-sizing: border-box;}
 #header #gnb ul.menu li ul.menu-sub li {width: auto; height: 35px; margin-bottom: 0; float: none;}
 #header #gnb ul.menu li ul.menu-sub li a {position: relative; font-size: 15px; line-height: 15px; text-align: left; padding: 6px 0; display: inline-block; vertical-align: top; color: #5a5a5a; height: auto;}
 #header #gnb ul.menu li ul.menu-sub li a:hover span {text-decoration: underline;}
@@ -117,7 +117,6 @@ body#main #footer .layout {position: relative; max-width: 1300px; margin: 0 auto
 #content {overflow: hidden;}
 #content div.scroll {position: fixed; bottom: 64px; left: 50%; z-index: 1000; width: 26px; height: 43px; margin-left: -13px;}
 #content div.scroll:before {content: 'SCROLL'; position: absolute; display: block; width: 55px; text-align: center; left: 50%; top: -30px; margin-left: -27.5px; color: #bbb; font-family: 'Titillium Web'; font-size: 16px; letter-spacing: -0.32px;}
-/*#content div.scroll:after {content: ''; position: absolute; display: block; width: 1px; height: 80px; background: #bbb; left: 50%; margin-left: -0.5px; top: -120px;}*/
 #content div.scroll a {position: relative; display: block; width: 100%; height: 100%; border: 3px solid #bbb; box-sizing: border-box; border-radius: 13px; color: #bbb; text-indent: -9999px;}
 #content div.scroll a:after {content: ''; position: absolute; display: block; width: 4px; height: 4px; border-radius: 50%; background: #bbb; top: 9px; left: 50%; margin-left: -2px; animation: mousescroll 1.8s infinite;}
 @keyframes mousescroll {
