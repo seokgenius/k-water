@@ -116,10 +116,10 @@ body#main #footer .layout {position: relative; max-width: 1300px; margin: 0 auto
 /*content*/
 #content {overflow: hidden;}
 #content div.scroll {position: fixed; bottom: 64px; left: 50%; z-index: 1000; width: 26px; height: 43px; margin-left: -13px;}
-#content div.scroll:before {content: 'SCROLL'; position: absolute; display: block; width: 55px; text-align: center; left: 50%; top: -30px; margin-left: -27.5px; color: #fff; font-family: 'Titillium Web'; font-size: 16px; letter-spacing: -0.32px;}
-#content div.scroll:after {content: ''; position: absolute; display: block; width: 1px; height: 80px; background: #fff; left: 50%; margin-left: -0.5px; top: -120px;}
-#content div.scroll a {position: relative; display: block; width: 100%; height: 100%; border: 3px solid #fff; box-sizing: border-box; border-radius: 13px; color: #fff; text-indent: -9999px;}
-#content div.scroll a:after {content: ''; position: absolute; display: block; width: 4px; height: 4px; border-radius: 50%; background: #fff; top: 9px; left: 50%; margin-left: -2px; animation: mousescroll 1.8s infinite;}
+#content div.scroll:before {content: 'SCROLL'; position: absolute; display: block; width: 55px; text-align: center; left: 50%; top: -30px; margin-left: -27.5px; color: #bbb; font-family: 'Titillium Web'; font-size: 16px; letter-spacing: -0.32px;}
+/*#content div.scroll:after {content: ''; position: absolute; display: block; width: 1px; height: 80px; background: #bbb; left: 50%; margin-left: -0.5px; top: -120px;}*/
+#content div.scroll a {position: relative; display: block; width: 100%; height: 100%; border: 3px solid #bbb; box-sizing: border-box; border-radius: 13px; color: #bbb; text-indent: -9999px;}
+#content div.scroll a:after {content: ''; position: absolute; display: block; width: 4px; height: 4px; border-radius: 50%; background: #bbb; top: 9px; left: 50%; margin-left: -2px; animation: mousescroll 1.8s infinite;}
 @keyframes mousescroll {
   0% {
     transform: rotate(-45deg) translate(0, 0); opacity: 0;}

@@ -14,8 +14,13 @@ $(document).ready(function (){
         $(window).on('scroll resize', function() {
             checkScroll();
         });
-
-        // 이벤트
+    
+        // 중하단 마우스 모양 클릭시 다음 섹션으로 넘어
+        $('#content div.scroll a').on('click', function() {
+            showPage(pageNext);
+        });
+        
+        // spyscroll
         $('#side-nav ul li a').on('click', function() {
             var index = $('#side-nav ul li').index($(this).parent());
             $('#side-nav ul li a').removeClass('active');
